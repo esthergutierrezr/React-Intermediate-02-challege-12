@@ -15,16 +15,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeId: "home",
+      activeId: "",
     };
   }
 
-  handleChangeTab(event) {
+  handleChangeTab = (event) => {
     const buttonId = event.target.id;
     this.setState({ activeId: buttonId });
-  }
+  };
 
-  getTabContent() {
+  getTabContent = () => {
     switch (this.state.activeId) {
       case "home":
         return <Home />;
@@ -35,12 +35,15 @@ class App extends Component {
       default:
         return <Error />;
     }
-  }
+  };
 
   render() {
     return (
       <div className="App">
-        <TabSelector activeId={this.state.activeId} />
+        <TabSelector
+          handleChangeTab={this.handleChangeTab}
+          activeId={this.state.activeId}
+        />
         <div className="App-content">{this.getTabContent()}</div>
       </div>
     );

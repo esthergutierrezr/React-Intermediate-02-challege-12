@@ -15,21 +15,21 @@ class TabSelector extends Component {
       <div className="TabSelector">
         <button
           id="home"
-          onClick={this.handleChangeTab}
+          onClick={this.props.handleChangeTab}
           className={activeId === "home" ? "active" : ""}
         >
           Home
         </button>
         <button
           id="about"
-          onClick={this.handleChangeTab}
+          onClick={this.props.handleChangeTab}
           className={activeId === "about" ? "active" : ""}
         >
           About
         </button>
         <button
           id="contact"
-          onClick={this.handleChangeTab}
+          onClick={this.props.handleChangeTab}
           className={activeId === "contact" ? "active" : ""}
         >
           Contact
